@@ -35,6 +35,7 @@ exports.loginPost = (req, res) => {
     res.render("login", {
       username_message: validation.username_message,
       password_message: validation.password_message,
+      user_name : req.body.email
     });
   }
 };

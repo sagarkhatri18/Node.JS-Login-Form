@@ -17,7 +17,9 @@
             id="email"
             name="email"
             placeholder="Email Address"
-            required
+            <% if(typeof user_name != 'undefined'){ %>
+              value="<%= user_name %>"
+            <% } %>
           />
           <span class="validation-message">
             <% if (typeof username_message != "undefined" && username_message) {
@@ -30,7 +32,7 @@
             id="password"
             name="password"
             placeholder="Password"
-            required
+           
           />
           <span class="validation-message">
             <% if (typeof password_message != "undefined" && password_message) {
