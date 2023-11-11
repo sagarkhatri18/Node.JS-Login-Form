@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="login-form-wrap">
+      <h2>Login Form</h2>
+      <% if(locals.logout){ %>
+      <span class="logout-message"><%= logout %></span>
+      <% } %>
+      <form id="login-form" action="/" method="post">
+        <p>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <span class="validation-message">
+            <% if (typeof username_message != "undefined" && username_message) {
+            %> <%= username_message %> <% } %>
+          </span>
+        </p>
+        <p>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <span class="validation-message">
+            <% if (typeof password_message != "undefined" && password_message) {
+            %> <%= password_message %> <% } %>
+          </span>
+        </p>
+        <p>
+          <input class="form-button" type="submit" id="login" value="Login" />
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
